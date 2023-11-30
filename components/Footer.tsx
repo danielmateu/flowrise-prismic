@@ -2,6 +2,6 @@
 
 export const Footer = () => {
     return (
-        <div className="text-center">Footer</div>
+        <footer className="text-center">Footer</footer>
     )
 }

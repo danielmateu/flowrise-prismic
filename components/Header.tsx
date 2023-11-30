@@ -1,7 +1,24 @@
+import { createClient } from '@/prismicio'
+import { PrismicNextLink } from '@prismicio/next';
 
+export default async function Header() {
 
-export const Header = () => {
+    const client = createClient();
+
+    const settings = await client.getSingle('settings')
+
     return (
-        <div className="text-center">Header</div>
+        <header className="flex justify-between py-2 px-4">
+            {settings.data.site_title}
+            <nav>
+                <ul className='flex gap-2'>
+                    {settings.data.navigation.map(({label, link}) => (
+                        <li key={label}>
+                            <PrismicNextLink field={link}>{label}</PrismicNextLink>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </header>
     )
 }
