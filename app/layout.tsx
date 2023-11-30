@@ -3,9 +3,8 @@ import { Inter, Nunito, Nunito_Sans } from 'next/font/google'
 import './globals.css'
 import clsx from 'clsx'
 import Header from '@/components/Header'
-import { Footer } from '@/components/Footer'
+import Footer from '@/components/Footer'
 import { createClient } from '@/prismicio'
-
 
 // const inter = Inter({ subsets: ['latin'] })
 const nunito = Nunito({
