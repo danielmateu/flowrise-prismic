@@ -55,7 +55,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 {slice.primary.button_text}
               </Button>
             </div>
-            <PrismicNextImage field={slice.primary.image} className="drop-shadow-xl mx-w-4xl w-full rounded-xl h-4/6" />
+            <PrismicNextImage field={slice.primary.image} className="drop-shadow-xl mx-w-4xl w-full rounded-xl" />
           </div>
         </Bounded>
       )}
