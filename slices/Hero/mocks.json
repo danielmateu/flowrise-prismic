@@ -9,8 +9,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Minim reprehenderit elit dolor dolore anim cupidatat duis adipisicing et nulla ad dolore."
-						}
+							"text": "Unleash your potential by harmonizing your daily tasks and habits with your unique energy rhythms.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -50,7 +52,7 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "This is sparta!",
+							"text": "Productivity that flows \nwith your life.",
 							"spans": []
 						},
 						"direction": "ltr"
@@ -60,7 +62,7 @@
 			"button_text": {
 				"__TYPE__": "FieldContent",
 				"type": "Text",
-				"value": "My button"
+				"value": "Try for free"
 			}
 		},
 		"items": []
