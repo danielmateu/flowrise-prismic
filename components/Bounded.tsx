@@ -1,6 +1,5 @@
 import clsx from "clsx"
 interface BoundedProps {
-
     as?: React.ElementType
     className?: string
     children: React.ReactNode
