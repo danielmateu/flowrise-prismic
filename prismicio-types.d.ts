@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | TestimoniosSlice
+  | FeaturesSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -170,7 +173,75 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+/**
+ * Content for Testimonio documents
+ */
+interface TestimonioDocumentData {
+  /**
+   * Name field in *Testimonio*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonio.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Job Title field in *Testimonio*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonio.job_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  job_title: prismic.KeyTextField;
+
+  /**
+   * Quote field in *Testimonio*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonio.quote
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+
+  /**
+   * Avatar field in *Testimonio*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonio.avatar
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  avatar: prismic.ImageField<never>;
+}
+
+/**
+ * Testimonio document from Prismic
+ *
+ * - **API ID**: `testimonio`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TestimonioDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TestimonioDocumentData>,
+    "testimonio",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomepageDocument
+  | SettingsDocument
+  | TestimonioDocument;
 
 /**
  * Primary content in *Features → Primary*
@@ -402,6 +473,66 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceHorizontal;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Testimonios → Primary*
+ */
+export interface TestimoniosSliceDefaultPrimary {
+  /**
+   * Heading field in *Testimonios → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonios.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+}
+
+/**
+ * Primary content in *Testimonios → Items*
+ */
+export interface TestimoniosSliceDefaultItem {
+  /**
+   * Testimonio field in *Testimonios → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonios.items[].testimonio
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  testimonio: prismic.ContentRelationshipField<"testimonio">;
+}
+
+/**
+ * Default variation for Testimonios Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimoniosSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestimoniosSliceDefaultPrimary>,
+  Simplify<TestimoniosSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Testimonios*
+ */
+type TestimoniosSliceVariation = TestimoniosSliceDefault;
+
+/**
+ * Testimonios Shared Slice
+ *
+ * - **API ID**: `testimonios`
+ * - **Description**: Testimonios
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimoniosSlice = prismic.SharedSlice<
+  "testimonios",
+  TestimoniosSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -418,6 +549,8 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      TestimonioDocument,
+      TestimonioDocumentData,
       AllDocumentTypes,
       FeaturesSlice,
       FeaturesSliceDefaultPrimary,
@@ -430,6 +563,11 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceHorizontal,
+      TestimoniosSlice,
+      TestimoniosSliceDefaultPrimary,
+      TestimoniosSliceDefaultItem,
+      TestimoniosSliceVariation,
+      TestimoniosSliceDefault,
     };
   }
 }

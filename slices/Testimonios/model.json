@@ -1,0 +1,39 @@
+{
+  "id": "testimonios",
+  "type": "SharedSlice",
+  "name": "Testimonios",
+  "description": "Testimonios",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "testimonio": {
+          "type": "Link",
+          "config": {
+            "label": "Testimonio",
+            "select": "document",
+            "customtypes": [
+              "testimonio"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
