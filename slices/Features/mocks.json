@@ -9,8 +9,10 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Heard"
-						}
+							"text": "Robust features",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
@@ -23,8 +25,8 @@
 						"icon",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "calendar",
-							"type": "Select"
+							"type": "Select",
+							"value": "calendar"
 						}
 					],
 					[
@@ -35,8 +37,10 @@
 								{
 									"type": "heading3",
 									"content": {
-										"text": "School"
-									}
+										"text": "Scheduling",
+										"spans": []
+									},
+									"direction": "ltr"
 								}
 							]
 						}
@@ -49,8 +53,145 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Ea ipsum tempor pariatur labore non eiusmod ad. Et incididunt ipsum laborum cupidatat sit ut labore aliquip irure excepteur minim consequat labore minim ut."
-									}
+										"text": "Create task schedules synced to your natural energy peaks and troughs.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "bragraph"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Analytics",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Track your productivity trends with comprehensive data and insights.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "clover"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Integrations",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Incorporate wellness practices into your daily plan with reminders for meditation, hydration, and more.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "hourglass"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Focus Timer",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Use the built-in Pomodoro timer for focused work sessions with customizable intervals.",
+										"spans": []
+									},
+									"direction": "ltr"
 								}
 							]
 						}

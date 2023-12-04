@@ -13,14 +13,26 @@ const components: JSXMapSerializer = {
     <Heading as='h2' size="md" className="text-center mb-12">
       {children}
     </Heading>
+  ),
+  heading3: ({ children }) => (
+    <Heading as='h3' size="sm" className="mb-3 font-medium sm:text-left text-center">
+      {children}
+    </Heading>
+  ),
+  paragraph: ({ children }) => (
+    <p className="text-base font-medium font-body text-slate-500 sm:text-left text-center">
+      {children}
+    </p>
   )
+
+
 }
 
 const icons: Icons = {
   calendar: <CalendarIcon />,
-  analitics: <AnaliticsIcon />,
-  integrations: <IntegrationsIcon />,
-  timer: <TimerIcon />
+  bragraph: <BragraphIcon />,
+  clover: <CloverIcon />,
+  hourglass: <HourGlassIcon />
 }
 
 /**
@@ -38,12 +50,12 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <PrismicRichText field={slice.primary.heading} components={components} />
-      <div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-5xl gap-x-8 gap-y-12 mx-auto sm:place-items-start place-items-center">
         {slice.items.map((item, index) => (
-          <div key={index}>
-            {item.icon && <>{icons[item.icon]}</>}
-            <PrismicRichText field={item.title} />
-            <PrismicRichText field={item.description} />
+          <div key={index} className="max-w-xs grid sm:place-items-start place-items-center">
+            {item.icon && <div className="mb-5">{icons[item.icon]}</div>}
+            <PrismicRichText field={item.title} components={components} />
+            <PrismicRichText field={item.description} components={components} />
           </div>
         ))}
       </div>
@@ -76,7 +88,7 @@ function CalendarIcon() {
   );
 }
 
-function AnaliticsIcon() {
+function BragraphIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none">
       <path
@@ -106,7 +118,7 @@ function AnaliticsIcon() {
   );
 }
 
-function IntegrationsIcon() {
+function CloverIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="none">
       <path
@@ -124,7 +136,7 @@ function IntegrationsIcon() {
   );
 }
 
-function TimerIcon() {
+function HourGlassIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" fill="none">
       <path
