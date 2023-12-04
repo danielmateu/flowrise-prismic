@@ -24,8 +24,6 @@ const components: JSXMapSerializer = {
       {children}
     </p>
   )
-
-
 }
 
 const icons: Icons = {
