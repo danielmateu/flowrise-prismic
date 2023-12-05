@@ -40,10 +40,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(nunito.variable, nunitoSans.variable)}>
+      <body className={clsx("", nunito.variable, nunitoSans.variable)}>
         <Header />
         {children}
         <Footer />
+        <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-100 z-[-1] inset-0 opacity-50"/>
       </body>
     </html>
   )
